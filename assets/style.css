@@ -74,6 +74,7 @@ section { display: flex; flex-direction: column; gap: 18px; }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
 .doi { font-size: 14px; overflow-wrap: anywhere; }
 .stories { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.preview { width: 100%; height: auto; border-radius: 16px; }
 .stories img { width: 100%; height: auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 12px; }
 
 footer { font-size: 14px; color: var(--muted); border-top: 1.5px solid var(--sand); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
