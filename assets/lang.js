@@ -1,4 +1,4 @@
-// Language toggle (ES/EN). #en or #es in the URL picks the language; otherwise the last choice, then Spanish.
+// Language toggle (ES/EN/FR). #es, #en or #fr in the URL picks the language; otherwise the last choice, then Spanish.
 (function () {
   var root = document.documentElement;
   var buttons = document.querySelectorAll('.lang button');
@@ -9,8 +9,8 @@
     try { localStorage.setItem('cpc-lang', l); } catch (e) {}
   }
   buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.dataset.set); }); });
-  var start = 'es';
-  if (location.hash === '#en') start = 'en';
-  else if (location.hash !== '#es') { try { start = localStorage.getItem('cpc-lang') || 'es'; } catch (e) {} }
-  setLang(start === 'en' ? 'en' : 'es');
+  var langs = ['es', 'en', 'fr'];
+  var start = location.hash.slice(1);
+  if (langs.indexOf(start) < 0) { try { start = localStorage.getItem('cpc-lang') || 'es'; } catch (e) { start = 'es'; } }
+  setLang(langs.indexOf(start) < 0 ? 'es' : start);
 })();

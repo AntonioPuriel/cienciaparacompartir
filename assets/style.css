@@ -24,7 +24,7 @@ img { max-width: 100%; display: block; }
 a { color: var(--accent); text-underline-offset: 3px; }
 a:hover { color: var(--fg); }
 a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-[data-lang="es"] .en, [data-lang="en"] .es { display: none !important; }
+[data-lang="es"] .en, [data-lang="es"] .fr, [data-lang="en"] .es, [data-lang="en"] .fr, [data-lang="fr"] .es, [data-lang="fr"] .en { display: none !important; }
 
 .horizon { position: relative; height: 150px; overflow: hidden; }
 .horizon svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 120px; display: block; }
