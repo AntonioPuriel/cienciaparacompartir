@@ -27,7 +27,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outlin
 [data-lang="es"] .en, [data-lang="es"] .fr, [data-lang="en"] .es, [data-lang="en"] .fr, [data-lang="fr"] .es, [data-lang="fr"] .en { display: none !important; }
 
 .horizon { position: relative; height: 150px; overflow: hidden; }
-.horizon svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 120px; display: block; }
+.horizon > svg:not(.cactus) { position: absolute; left: 0; bottom: 0; width: 100%; height: 120px; display: block; }
+.cactus { position: absolute; color: var(--sage); }
+.cactus.c1 { left: 9%; bottom: 62px; width: 46px; height: 78px; }
+.cactus.c2 { left: 38%; bottom: 66px; width: 28px; height: 46px; }
 .sun { position: absolute; right: 12%; bottom: 46px; width: 84px; height: 84px; border-radius: 50%; background: var(--sun); }
 
 .wrap { max-width: 720px; margin: 0 auto; padding-inline: 20px; padding-block: 28px 64px; display: flex; flex-direction: column; gap: 40px; }
