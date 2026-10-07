@@ -13,19 +13,6 @@
 | 2026-10-07 | ¿El azúcar te envejece? · Is sugar aging you? | [azucar-envejecimiento](https://antoniopuriel.github.io/cienciaparacompartir/azucar-envejecimiento/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/azucar-envejecimiento/#en) |
 | 2026-10-07 | ¿Lo que comes envejece tu cerebro? · Is your diet aging your brain? | [dieta-cerebro](https://antoniopuriel.github.io/cienciaparacompartir/dieta-cerebro/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/dieta-cerebro/#en) |
 
-## Estructura · Structure
-
-```
-index.html            portada / home
-assets/style.css      estilo compartido / shared style
-assets/lang.js        selector ES/EN / language toggle
-<tema>/index.html     fuentes del tema / topic sources
-<tema>/story-*.png    la story publicada / the published story
-```
-
-Para añadir un tema: copia `dieta-cerebro/` en una carpeta nueva, cambia el contenido y añade una entrada en `index.html` y en la tabla de arriba.
-
-To add a topic: copy `dieta-cerebro/` into a new folder, replace the content, and add an entry to `index.html` and to the table above.
 
 ---
 
