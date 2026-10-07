@@ -66,6 +66,7 @@ h1 em { font-weight: 400; color: var(--accent); }
 .chip.db { color: var(--muted); }
 .chip.meta { color: var(--fg); }
 .chip.rev { color: var(--muted); border-style: dashed; }
+.chip.lab { color: var(--muted); border-style: dotted; }
 section { display: flex; flex-direction: column; gap: 18px; }
 .frame { display: flex; align-items: baseline; gap: 12px; border-bottom: 1.5px solid var(--sand); padding-bottom: 8px; }
 .frame h2 { margin: 0; font-family: var(--display); font-weight: 600; font-size: 24px; line-height: 1.2; }
