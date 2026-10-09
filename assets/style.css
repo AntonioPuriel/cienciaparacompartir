@@ -83,3 +83,4 @@ section { display: flex; flex-direction: column; gap: 18px; }
 
 footer { font-size: 14px; color: var(--muted); border-top: 1.5px solid var(--sand); padding-top: 18px; display: flex; flex-direction: column; gap: 8px; }
 footer p { margin: 0; }
+.sub-h { margin: 10px 0 0; font-family: var(--display); font-weight: 600; font-size: 20px; color: var(--accent); }
