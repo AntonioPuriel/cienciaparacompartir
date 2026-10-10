@@ -21,6 +21,12 @@
 | 2026-10 | ¿Lo que comes envejece tu cerebro? · Is your diet aging your brain? · Votre alimentation fait-elle vieillir votre cerveau ? | [dieta-cerebro](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-cerebro/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-cerebro/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-cerebro/#fr) |
 
 
+### Ciencia y ambiente · Science and environment · Science et environnement ([`ciencia-ambiente/`](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/))
+
+| Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
+|---|---|---|
+| 2026-10 | ¿Basta con dejar de comprarlos? · Is it enough to stop buying them? · Suffit-il d’arrêter de les acheter ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
+
 ---
 
 Antonio Puriel Hernández, PhD · Contenido divulgativo; no sustituye el consejo médico. / For general information only; not medical advice. / Contenu de vulgarisation ; ne remplace pas un avis médical.
