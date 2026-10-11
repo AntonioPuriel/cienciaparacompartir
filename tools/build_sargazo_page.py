@@ -1,0 +1,214 @@
+"""Genera ciencia-ambiente/sargazo/index.html (ES/EN/FR)."""
+import sys, pathlib
+from pagekit import t, section, HORIZON
+
+OUT = pathlib.Path(sys.argv[1])
+
+CH = {
+    'obs': ('obs', t('Medición', 'Measurement', 'Mesures')),
+    'rev': ('rev', t('Revisión', 'Review', 'Revue')),
+    'db': ('db', t('Modelo', 'Model', 'Modèle')),
+}
+
+def ref(cite, title, finding, chips, doi=None, url=None, label=None):
+    chip_html = ''.join(f'<span class="chip {CH[c][0]}">{CH[c][1]}</span>' for c in chips)
+    link = f'<a class="doi" href="{url}">{label}</a>' if url else f'<a class="doi" href="https://doi.org/{doi}">doi.org/{doi}</a>'
+    return f'''    <article class="ref">
+      <p class="cite">{cite}</p>
+      <p class="title">{title}</p>
+      <p class="finding">{finding}</p>
+      <div class="meta">{chip_html}{link}</div>
+    </article>'''
+
+S = []
+
+S.append(section(t('Cómo nació el cinturón', 'How the belt was born', 'Comment la ceinture est née'), '\n'.join([
+    ref('Johns EM, Lumpkin R, Putman NF, et al. · Progress in Oceanography · 2020; 182: 102269',
+        'The establishment of a pelagic <i>Sargassum</i> population in the tropical Atlantic: Biological consequences of a basin-scale long distance dispersal event',
+        t('Antes de 2011, el sargazo flotante abundaba sobre todo en el mar de los Sargazos y el golfo de México. Con corrientes simuladas e imágenes de satélite, los autores reconstruyen qué pasó: en el invierno 2009-2010, una fase muy negativa de la Oscilación del Atlántico Norte desplazó al sur vientos del oeste inusualmente fuertes, que empujaron el sargazo hacia el Atlántico oriental. De ahí, las corrientes lo llevaron al trópico, donde llegó al Caribe en la primavera de 2011. En el trópico encontró una franja con nutrientes y luz donde crece cada año.',
+          'Before 2011, floating sargassum was abundant mainly in the Sargasso Sea and the Gulf of Mexico. Using simulated currents and satellite images, the authors reconstruct what happened: in winter 2009-2010, a strongly negative phase of the North Atlantic Oscillation shifted unusually strong westerly winds southward, pushing sargassum toward the eastern Atlantic. From there, currents carried it into the tropics, reaching the Caribbean in spring 2011. In the tropics it found a band with nutrients and light where it grows every year.',
+          'Avant 2011, les sargasses flottantes abondaient surtout dans la mer des Sargasses et le golfe du Mexique. À partir de courants simulés et d’images satellite, les auteurs reconstituent ce qui s’est passé : à l’hiver 2009-2010, une phase très négative de l’oscillation nord-atlantique a déplacé vers le sud des vents d’ouest exceptionnellement forts, qui ont poussé les sargasses vers l’Atlantique oriental. De là, les courants les ont portées vers les tropiques, jusqu’aux Caraïbes au printemps 2011. Sous les tropiques, elles ont trouvé une bande riche en nutriments et en lumière où elles croissent chaque année.'),
+        ['db'], doi='10.1016/j.pocean.2020.102269'),
+    ref('University of South Florida, Optical Oceanography Lab · Sargassum Watch System · boletines mensuales 2025-2026',
+        'Outlook of 2025 / 2026 Sargassum blooms',
+        t('Vigilan el sargazo del Atlántico tropical, el Caribe y el golfo de México con satélites desde 2011. En el verano de 2025 midieron unos 38 millones de toneladas, el máximo de la serie. En 2026 la temporada empezó antes de lo habitual, con récords para cada mes en varias regiones; en junio el golfo de México llegó a 5 millones de toneladas, casi el doble de su récord anterior. Pasado el pico, el laboratorio concluyó que 2026 es el segundo año con más sargazo, solo por detrás de 2025.',
+          'They have monitored sargassum in the tropical Atlantic, the Caribbean and the Gulf of Mexico by satellite since 2011. In summer 2025 they measured about 38 million tonnes, the highest in the record. In 2026 the season started earlier than usual, with monthly records in several regions; in June the Gulf of Mexico reached 5 million tonnes, nearly double its previous record. After the peak, the lab concluded that 2026 is the second-largest sargassum year, behind only 2025.',
+          'Ils surveillent les sargasses de l’Atlantique tropical, des Caraïbes et du golfe du Mexique par satellite depuis 2011. À l’été 2025, ils ont mesuré environ 38 millions de tonnes, le maximum de la série. En 2026, la saison a commencé plus tôt que d’habitude, avec des records mensuels dans plusieurs régions ; en juin, le golfe du Mexique a atteint 5 millions de tonnes, presque le double de son record précédent. Après le pic, le laboratoire a conclu que 2026 est la deuxième année la plus chargée, juste derrière 2025.'),
+        ['obs'], url='https://optics.marine.usf.edu/projects/saws.html', label='optics.marine.usf.edu/projects/saws'),
+]), t('Johns reconstruye 2010 con modelos de corrientes: nadie midió entonces el sargazo que cruzó el océano. Las toneladas de la USF son estimaciones a partir de la superficie cubierta que se ve desde el satélite. Que haya mucho sargazo en el mar no significa que llegue a una playa concreta: eso depende del viento y de las corrientes de cada semana.',
+      'Johns reconstructs 2010 with current models: nobody measured the sargassum crossing the ocean at the time. USF’s tonnages are estimates based on the surface cover seen from satellites. Lots of sargassum at sea doesn’t mean it will reach a given beach: that depends on each week’s winds and currents.',
+      'Johns reconstitue 2010 avec des modèles de courants : personne n’a mesuré à l’époque les sargasses qui traversaient l’océan. Les tonnages de l’USF sont des estimations fondées sur la surface couverte vue par satellite. Beaucoup de sargasses en mer ne veut pas dire qu’elles atteindront une plage donnée : cela dépend des vents et des courants de chaque semaine.')))
+
+S.append(section(t('Qué lo alimenta', 'What feeds it', 'Ce qui les nourrit'), '\n'.join([
+    ref('Jung J, Duprey NN, Foreman AD, et al. (42 autores) · Nature Geoscience · 2025',
+        'Equatorial upwelling of phosphorus drives Atlantic N<sub>2</sub> fixation and <i>Sargassum</i> blooms',
+        t('Los corales guardan en su esqueleto la huella química del nitrógeno del agua. Con núcleos de coral de todo el Caribe reconstruyeron 120 años de fijación de nitrógeno, el proceso por el que algunas bacterias convierten el nitrógeno del aire en alimento. Esa fijación sube cuando los vientos del ecuador hacen aflorar agua profunda con fósforo de sobra. El sargazo vive asociado a bacterias fijadoras de nitrógeno, así que ese fósforo extra le da ventaja: juntos, fósforo y nitrógeno explican la mayor parte de cómo ha variado el sargazo desde 2011. Participaron investigadores de la UNAM y de la UABC (México).',
+          'Corals store the chemical fingerprint of seawater nitrogen in their skeletons. Using coral cores from across the Caribbean, they reconstructed 120 years of nitrogen fixation, the process by which some bacteria turn nitrogen from the air into food. Fixation rises when equatorial winds bring up deep water with surplus phosphorus. Sargassum lives alongside nitrogen-fixing bacteria, so that extra phosphorus gives it an edge: together, phosphorus and nitrogen explain most of how sargassum has varied since 2011. Researchers from UNAM and UABC (Mexico) took part.',
+          'Les coraux gardent dans leur squelette l’empreinte chimique de l’azote de l’eau. Avec des carottes de corail de toute la Caraïbe, ils ont reconstitué 120 ans de fixation d’azote, le processus par lequel certaines bactéries transforment l’azote de l’air en nourriture. Cette fixation augmente quand les vents équatoriaux font remonter des eaux profondes riches en phosphore excédentaire. Les sargasses vivent associées à des bactéries fixatrices d’azote : ce phosphore en plus leur donne un avantage. Ensemble, phosphore et azote expliquent l’essentiel des variations des sargasses depuis 2011. Des chercheurs de l’UNAM et de l’UABC (Mexique) y ont participé.'),
+        ['obs'], doi='10.1038/s41561-025-01812-2'),
+    ref('Lapointe BE, Brewton RA, Herren LW, et al. · Nature Communications · 2021; 12: 3060',
+        'Nutrient content and stoichiometry of pelagic <i>Sargassum</i> reflects increasing nitrogen availability in the Atlantic Basin',
+        t('Compararon 488 muestras de sargazo recogidas desde los años 80. Su tejido tiene hoy un 35 % más de nitrógeno y un 44 % menos de fósforo, así que la proporción nitrógeno:fósforo se duplicó (de 13:1 a 28:1). Los valores más altos de nitrógeno aparecieron cerca de costas que reciben escorrentía de tierra. Los autores lo atribuyen a que hay más nitrógeno disponible en el Atlántico, en parte de origen humano: fertilizantes, aguas residuales y quema de biomasa.',
+          'They compared 488 sargassum samples collected since the 1980s. Its tissue now holds 35% more nitrogen and 44% less phosphorus, so the nitrogen:phosphorus ratio has doubled (from 13:1 to 28:1). The highest nitrogen values appeared near coasts that receive land runoff. The authors attribute this to more nitrogen being available in the Atlantic, partly from human sources: fertilizers, sewage and biomass burning.',
+          'Ils ont comparé 488 échantillons de sargasses prélevés depuis les années 80. Leurs tissus contiennent aujourd’hui 35 % d’azote en plus et 44 % de phosphore en moins : le rapport azote/phosphore a doublé (de 13:1 à 28:1). Les valeurs d’azote les plus élevées apparaissent près des côtes qui reçoivent le ruissellement des terres. Les auteurs l’attribuent à davantage d’azote disponible dans l’Atlantique, en partie d’origine humaine : engrais, eaux usées et feux de biomasse.'),
+        ['obs'], doi='10.1038/s41467-021-23135-7'),
+    ref('Lapointe BE, Webber DF, Brewton RA · Harmful Algae · 2025; 102940',
+        'Productivity, growth, and biogeochemistry of pelagic <i>Sargassum</i> in a changing world',
+        t('Revisión de cuatro décadas de datos sobre cómo crece el sargazo. Actualiza la serie: entre los años 80 y los 2020, el nitrógeno del tejido subió más del 50 %. También describe cómo los peces, invertebrados y microbios que viven en las balsas reciclan nutrientes y permiten que el alga crezca incluso en aguas pobres.',
+          'A review of four decades of data on how sargassum grows. It updates the series: between the 1980s and the 2020s, tissue nitrogen rose by more than 50%. It also describes how the fish, invertebrates and microbes living in the mats recycle nutrients, letting the alga grow even in nutrient-poor water.',
+          'Revue de quatre décennies de données sur la croissance des sargasses. Elle met la série à jour : entre les années 80 et 2020, l’azote des tissus a augmenté de plus de 50 %. Elle décrit aussi comment les poissons, invertébrés et microbes vivant dans les radeaux recyclent les nutriments, ce qui permet à l’algue de pousser même dans des eaux pauvres.'),
+        ['rev'], doi='10.1016/j.hal.2025.102940'),
+]), t('Los corales son un registro indirecto y muestran que fósforo, nitrógeno y sargazo varían juntos, no que uno cause al otro en cada año. El tejido del alga dice que hay más nitrógeno disponible, pero no cuánto viene de fertilizantes, de aguas residuales o de las bacterias que lo fijan del aire. Los dos grupos ponen el acento en fuentes distintas, y esa discusión sigue abierta.',
+      'Corals are an indirect record and show that phosphorus, nitrogen and sargassum vary together, not that one causes the other every year. The alga’s tissue says more nitrogen is available, but not how much comes from fertilizers, sewage or the bacteria that fix it from the air. The two groups stress different sources, and that debate is still open.',
+      'Les coraux sont un enregistrement indirect et montrent que phosphore, azote et sargasses varient ensemble, pas que l’un cause l’autre chaque année. Les tissus de l’algue indiquent plus d’azote disponible, mais pas la part venant des engrais, des eaux usées ou des bactéries qui le fixent depuis l’air. Les deux groupes insistent sur des sources différentes, et ce débat reste ouvert.')))
+
+S.append(section(t('Ya se mantiene solo', 'It now sustains itself', 'Elles s’entretiennent seules'), '\n'.join([
+    ref('Zhou X, Novi L, Hay ME, Montoya JP, Aliu A, Realff MJ, Bracco A · Nature Communications · 2026; 17',
+        'Changing drivers of the Great Atlantic Sargassum Belt from physical forcing to ecological control',
+        t('Construyeron un modelo estadístico que reproduce cómo varió el sargazo entre 2011 y 2022 y que predijo bien 2023 y 2024. Según el modelo, al principio mandaba la física: la Oscilación del Atlántico Norte y los vientos de invierno, que mezclan el agua y suben nutrientes. Con los años ganó peso otro motor: los organismos que viven en las balsas y las balsas viejas que se descomponen reciclan nutrientes en la capa superficial. En 2023 y 2024 ese reciclaje fue el factor principal y compensó que el agua estuviera más estratificada. Los autores concluyen que es poco probable que el cinturón desaparezca por sí solo.',
+          'They built a statistical model that reproduces how sargassum varied between 2011 and 2022 and correctly predicted 2023 and 2024. According to the model, physics ruled at first: the North Atlantic Oscillation and winter winds, which mix the water and bring up nutrients. Over the years another engine gained weight: the organisms living in the mats and the aging mats that decompose recycle nutrients in the surface layer. In 2023 and 2024 that recycling was the main factor and offset the water being more stratified. The authors conclude the belt is unlikely to vanish on its own.',
+          'Ils ont construit un modèle statistique qui reproduit les variations des sargasses entre 2011 et 2022 et qui a bien prédit 2023 et 2024. Selon le modèle, la physique dominait au début : l’oscillation nord-atlantique et les vents d’hiver, qui mélangent l’eau et font remonter les nutriments. Avec les années, un autre moteur a pris du poids : les organismes qui vivent dans les radeaux et les vieux radeaux qui se décomposent recyclent les nutriments dans la couche de surface. En 2023 et 2024, ce recyclage a été le facteur principal et a compensé une eau plus stratifiée. Les auteurs concluent qu’il est peu probable que la ceinture disparaisse d’elle-même.'),
+        ['db'], doi='10.1038/s41467-026-72183-4'),
+]), t('Es un modelo de regresión: el reciclaje de nutrientes se deduce de lo bien que ajusta, no se midió directamente en el mar. Que el modelo acierte dos años no lo convierte en una proyección a décadas. Para quien trabaja con microbios es el hallazgo más llamativo: la comunidad que vive en el alga sostiene su propio crecimiento.',
+      'It’s a regression model: nutrient recycling is inferred from how well it fits, not measured directly at sea. Getting two years right doesn’t make it a projection for decades. For anyone working with microbes, it’s the most striking finding: the community living on the alga sustains its own growth.',
+      'C’est un modèle de régression : le recyclage des nutriments est déduit de la qualité de l’ajustement, pas mesuré directement en mer. Réussir deux années n’en fait pas une projection sur des décennies. Pour qui travaille sur les microbes, c’est le résultat le plus frappant : la communauté qui vit sur l’algue entretient sa propre croissance.')))
+
+S.append(section(t('No todo crece: también se mueve', 'Not everything grows: it also moves', 'Tout ne croît pas : cela se déplace aussi'), '\n'.join([
+    ref('Qi L, et al. · Nature Communications · 2026; 17: 612',
+        'Global floating algae blooms are expanding',
+        t('Con inteligencia artificial analizaron 1,2 millones de imágenes de satélite de todos los océanos entre 2003 y 2022. Las grandes algas flotantes del Atlántico tropical y del Pacífico occidental se expandieron a un ritmo sin precedentes desde la década de 2010, en torno al 13 % al año desde 2003. Las espumas de microalgas también crecieron, aunque mucho más despacio (1 % al año). Los autores lo relacionan con el calentamiento del océano y el exceso de nutrientes, y hablan de un posible cambio de régimen hacia un océano con más macroalgas.',
+          'Using artificial intelligence, they analyzed 1.2 million satellite images of all oceans between 2003 and 2022. Large floating algae in the tropical Atlantic and western Pacific expanded at an unprecedented pace from the 2010s, around 13% a year since 2003. Microalgal scums also grew, though far more slowly (1% a year). The authors link this to ocean warming and excess nutrients, and describe a possible regime shift toward a macroalgae-rich ocean.',
+          'Grâce à l’intelligence artificielle, ils ont analysé 1,2 million d’images satellite de tous les océans entre 2003 et 2022. Les grandes algues flottantes de l’Atlantique tropical et du Pacifique occidental se sont étendues à un rythme sans précédent depuis les années 2010, autour de 13 % par an depuis 2003. Les écumes de microalgues ont aussi progressé, mais bien plus lentement (1 % par an). Les auteurs y voient l’effet du réchauffement de l’océan et de l’excès de nutriments, et évoquent un possible changement de régime vers un océan riche en macroalgues.'),
+        ['obs'], doi='10.1038/s41467-025-66822-5'),
+    ref('Zhang Y, Barnes BB, Hu C, et al. · Nature Geoscience · 2025; 18: 1266–1272',
+        'Dramatic decline of <i>Sargassum</i> in the north Sargasso Sea since 2015',
+        t('En el norte del mar de los Sargazos, el lugar que le da nombre, el sargazo cayó más de un 90 % desde 2015, y su pico anual pasó del otoño-invierno al verano, como en el cinturón tropical. La causa más probable es que llega menos desde el golfo de México, donde el agua se ha calentado y las olas de calor marinas son más frecuentes. Junto con el auge del cinturón, los autores lo ven como el posible inicio de una redistribución del sargazo en todo el Atlántico.',
+          'In the north Sargasso Sea, the place it is named after, sargassum fell by more than 90% since 2015, and its yearly peak shifted from fall-winter to summer, as in the tropical belt. The most likely cause is that less arrives from the Gulf of Mexico, where water has warmed and marine heatwaves are more frequent. Together with the belt’s boom, the authors see it as the possible start of a basin-wide redistribution of sargassum.',
+          'Dans le nord de la mer des Sargasses, qui leur doit son nom, les sargasses ont chuté de plus de 90 % depuis 2015, et leur pic annuel est passé de l’automne-hiver à l’été, comme dans la ceinture tropicale. La cause la plus probable : il en arrive moins du golfe du Mexique, où l’eau s’est réchauffée et où les vagues de chaleur marines sont plus fréquentes. Avec l’essor de la ceinture, les auteurs y voient le début possible d’une redistribution des sargasses dans tout l’Atlantique.'),
+        ['obs'], doi='10.1038/s41561-025-01863-5'),
+    ref('Marsh R, Skliris N, Tompkins EL, et al. · PLOS Climate · 2023; 2(7): e0000253',
+        'Climate-sargassum interactions across scales in the tropical Atlantic',
+        t('Revisión sobre clima y sargazo. Las tasas de crecimiento dependen de la temperatura, así que décadas de calentamiento podrían perjudicarlo en el trópico; cómo cambiarán los demás factores (nutrientes, vientos, corrientes) es incierto. El equipo proyecta además que la temporada se alargue y que el sargazo se desplace más al norte.',
+          'A review of climate and sargassum. Growth rates depend on temperature, so decades of warming could harm it in the tropics; how the other drivers (nutrients, winds, currents) will change is uncertain. The team also projects a longer season and a northward shift.',
+          'Revue sur le climat et les sargasses. Leur croissance dépend de la température : des décennies de réchauffement pourraient leur nuire sous les tropiques ; l’évolution des autres facteurs (nutriments, vents, courants) reste incertaine. L’équipe prévoit aussi une saison plus longue et un déplacement vers le nord.'),
+        ['rev'], doi='10.1371/journal.pclm.0000253'),
+    ref('Jouanno J, Moquet JS, Berline L, et al. · Environmental Research Letters · 2021; 16: 034042',
+        'Evolution of the riverine nutrient export to the Tropical Atlantic over the last 15 years: is there a link with <i>Sargassum</i> proliferation?',
+        t('Revisaron datos de caudal y nutrientes de los tres ríos más grandes del mundo (Amazonas, Orinoco y Congo). No encontraron pruebas claras de que sus aportes de nutrientes hayan crecido mucho en 15 años. En 2017, solo un 10 % del sargazo estaba en zonas influidas por sus plumas. Concluyen que los ríos no son el motor principal, aunque la deforestación y la contaminación sean reales.',
+          'They reviewed discharge and nutrient data for the world’s three largest rivers (Amazon, Orinoco and Congo). They found no clear evidence that their nutrient inputs had grown much in 15 years. In 2017, only 10% of the sargassum was in areas influenced by their plumes. They conclude rivers are not the main driver, although deforestation and pollution are real.',
+          'Ils ont examiné les données de débit et de nutriments des trois plus grands fleuves du monde (Amazone, Orénoque et Congo). Ils n’ont pas trouvé de preuve claire que leurs apports aient beaucoup augmenté en 15 ans. En 2017, seulement 10 % des sargasses se trouvaient dans des zones sous l’influence de leurs panaches. Ils concluent que les fleuves ne sont pas le moteur principal, même si la déforestation et la pollution sont bien réelles.'),
+        ['obs'], doi='10.1088/1748-9326/abe11a'),
+]), t('Lo que no demuestran: que todos los factores empeoren a la vez. El calor extremo puede debilitar el sargazo, y los ríos no muestran un aumento claro. Qi relaciona la expansión con el calentamiento y los nutrientes, pero no lo prueba como causa. Lo que sí sugieren juntos es que el problema no se va: cambia de sitio y de temporada.',
+      'What they don’t show: that every driver is getting worse at once. Extreme heat can weaken sargassum, and rivers show no clear increase. Qi links the expansion to warming and nutrients but doesn’t prove causation. What they do suggest together is that the problem isn’t going away: it is changing place and season.',
+      'Ce qu’elles ne montrent pas : que tous les facteurs s’aggravent à la fois. La chaleur extrême peut affaiblir les sargasses, et les fleuves ne montrent pas de hausse nette. Qi relie l’expansion au réchauffement et aux nutriments, sans prouver de lien de cause. Ce qu’elles suggèrent ensemble : le problème ne disparaît pas, il change de lieu et de saison.')))
+
+def row(where, what, status, links):
+    a = ' · '.join(f'<a href="{u}">{n}</a>' for n, u in links)
+    cls, label = status
+    return f'        <tr><td>{where}</td><td>{what} {a}</td><td><span class="st {cls}">{label}</span></td></tr>'
+
+UNEP = 'https://sdgs.un.org/sites/default/files/2026-06/UNEP_Inputs_SG_Report_Caribbean_Sea_2026.pdf'
+reg_rows = [
+    row(t('Gran Caribe', 'Wider Caribbean', 'Grande Caraïbe'), t('Convenio de Cartagena: en la COP18 (octubre de 2025) los países adoptaron el primer Plan de Acción regional sobre arribazones de sargazo y crearon un grupo de trabajo.',
+              'Cartagena Convention: at COP18 (October 2025) the parties adopted the first regional Action Plan on sargassum inundations and set up a working group.',
+              'Convention de Carthagène : à la COP18 (octobre 2025), les parties ont adopté le premier plan d’action régional sur les échouements de sargasses et créé un groupe de travail.'),
+        ('part', t('No vinculante', 'Non-binding', 'Non contraignant')), [('PNUMA / UNEP', UNEP)]),
+    row(t('Gran Caribe', 'Wider Caribbean', 'Grande Caraïbe'), t('Protocolo sobre fuentes terrestres de contaminación (LBS) y Estrategia regional de reducción de nutrientes. Es lo más cercano a atacar la causa, pero solo cubre el Caribe, no todo el Atlántico.',
+              'Protocol on land-based sources of pollution (LBS) and Regional Nutrient Reduction Strategy. It’s the closest thing to tackling the cause, but it only covers the Caribbean, not the whole Atlantic.',
+              'Protocole sur les sources telluriques de pollution (LBS) et stratégie régionale de réduction des nutriments. C’est ce qui se rapproche le plus d’une action sur la cause, mais il ne couvre que la Caraïbe, pas tout l’Atlantique.'),
+        ('part', t('Estrategia, sin límites', 'Strategy, no limits', 'Stratégie, sans limites')), [('PNUMA / UNEP', UNEP)]),
+    row(t('México', 'Mexico', 'Mexique'), t('Carta Nacional Pesquera (DOF, 6 de agosto de 2025): el sargazo holopelágico del Caribe pasa de residuo a recurso pesquero con potencial de desarrollo. Se puede recolectar en el mar con permiso de pesca y dictamen del IMIPAS.',
+              'National Fisheries Charter (DOF, 6 August 2025): Caribbean holopelagic sargassum goes from waste to a fishery resource with development potential. It can be harvested at sea with a fishing permit and an IMIPAS technical opinion.',
+              'Charte nationale des pêches (DOF, 6 août 2025) : les sargasses holopélagiques des Caraïbes passent du statut de déchet à celui de ressource halieutique à potentiel de développement. On peut les récolter en mer avec un permis de pêche et un avis de l’IMIPAS.'),
+        ('ok', t('Vigente', 'In force', 'En vigueur')), [('Expansión', 'https://politica.expansion.mx/mexico/2025/08/09/no-mas-sargazo-en-playas-recurso-pesquero'), ('Gaceta UNAM', 'https://www.gaceta.unam.mx/el-sargazo-recurso-pesquero-con-potencial-de-desarrollo-academicas/')]),
+    row(t('México', 'Mexico', 'Mexique'), t('Plan de manejo pesquero del sargazo, previsto en la Carta Nacional Pesquera. En octubre de 2026 seguía sin publicarse.',
+              'Sargassum fishery management plan, foreseen in the National Fisheries Charter. As of October 2026 it had not been published.',
+              'Plan de gestion halieutique des sargasses, prévu par la Charte nationale des pêches. En octobre 2026, il n’était toujours pas publié.'),
+        ('part', t('Pendiente', 'Pending', 'En attente')), [('Por Esto, oct 2026', 'https://www.poresto.com/quintana-roo/2026/10/1/sargazo-en-quintana-roo-2026-rompe-record-con-138-mil-toneladas-recolectadas.html')]),
+    row(t('México', 'Mexico', 'Mexique'), t('Estrategia nacional de atención al sargazo: Semarnat, Semar y SECIHTI con el gobierno de Quintana Roo, en cinco ejes (ciencia, recolección, manejo, normatividad y aprovechamiento).',
+              'National sargassum response strategy: Semarnat, the Navy (Semar) and SECIHTI with the Quintana Roo government, across five areas (science, collection, handling, regulation and use).',
+              'Stratégie nationale face aux sargasses : Semarnat, la Marine (Semar) et le SECIHTI avec le gouvernement du Quintana Roo, en cinq axes (science, collecte, gestion, réglementation et valorisation).'),
+        ('part', t('Coordinación, no norma', 'Coordination, not a rule', 'Coordination, pas une règle')), [('Grupo Animal, oct 2026', 'https://grupoanimal.mx/quintana-roo/economia/cumbre-sargazo-mexico-busca-convertirlo-recurso')]),
+    row(t('Francia (Antillas)', 'France (Antilles)', 'France (Antilles)'), t('Plan Sargasses I (2018-2021, 26 M€) y II (2022-2025, 36 M€): previsión, barreras, recolección, almacenamiento e investigación. El Plan II terminó a finales de 2025 con críticas por su eficacia.',
+              'Sargassum Plan I (2018-2021, €26M) and II (2022-2025, €36M): forecasting, barriers, collection, storage and research. Plan II ended in late 2025, criticized for its effectiveness.',
+              'Plan Sargasses I (2018-2021, 26 M€) et II (2022-2025, 36 M€) : prévision, barrages, collecte, stockage et recherche. Le plan II s’est achevé fin 2025, critiqué pour son efficacité.'),
+        ('part', t('Concluido', 'Ended', 'Terminé')), [('Assemblée nationale', 'https://www.assemblee-nationale.fr/dyn/17/amendements/1906C/CION_FIN/CF2491.pdf')]),
+    row(t('Francia (Antillas)', 'France (Antilles)', 'France (Antilles)'), t('Plan Sargasses III: el Gobierno lo anunció para 2026 con dos prioridades, recolectar en el mar antes de que llegue a la costa y proteger la salud. No hemos podido confirmar su publicación.',
+              'Sargassum Plan III: the government announced it for 2026 with two priorities, collecting at sea before it reaches the coast and protecting health. We could not confirm its publication.',
+              'Plan Sargasses III : le gouvernement l’a annoncé pour 2026 avec deux priorités, collecter en mer avant l’échouement et protéger la santé. Nous n’avons pas pu confirmer sa publication.'),
+        ('part', t('Anunciado', 'Announced', 'Annoncé')), [('Assemblée nationale, jul 2026', 'https://questions.assemblee-nationale.fr/q17/17-1755QG.htm')]),
+]
+
+REG = f'''  <section>
+    <div class="frame"><h2>{t('Regulación en Europa y América', 'Regulation in Europe and the Americas', 'Réglementation en Europe et en Amérique')}</h2></div>
+    <p class="note">{t('Casi todo lo que existe trata de recoger el sargazo cuando ya llegó, no de reducir lo que lo alimenta. No hay ningún acuerdo que limite los nutrientes que llegan al Atlántico tropical. En EE. UU. no encontramos una norma federal específica: la vigilancia la hacen la USF y la NOAA.',
+                       'Almost everything in place is about collecting sargassum once it has arrived, not about reducing what feeds it. No agreement limits the nutrients reaching the tropical Atlantic. In the US we found no specific federal rule: monitoring is done by USF and NOAA.',
+                       'Presque tout ce qui existe vise à ramasser les sargasses une fois arrivées, pas à réduire ce qui les nourrit. Aucun accord ne limite les nutriments qui atteignent l’Atlantique tropical. Aux États-Unis, nous n’avons pas trouvé de règle fédérale spécifique : la surveillance est assurée par l’USF et la NOAA.')}</p>
+    <div class="reg-wrap">
+    <table class="reg">
+      <thead><tr><th>{t('Dónde', 'Where', 'Où')}</th><th>{t('Qué', 'What', 'Quoi')}</th><th>{t('Estado', 'Status', 'Statut')}</th></tr></thead>
+      <tbody>
+{chr(10).join(reg_rows)}
+      </tbody>
+    </table>
+    </div>
+  </section>
+'''
+
+LEGEND = f'''  <div class="legend">
+    <p><span class="chip rev">{CH['rev'][1]}</span><span>{t('Síntesis de expertos sobre lo publicado.', 'Expert synthesis of the published work.', 'Synthèse d’experts sur les travaux publiés.')}</span></p>
+    <p><span class="chip obs">{CH['obs'][1]}</span><span>{t('Datos medidos: satélites, muestras de alga, núcleos de coral o ríos.', 'Measured data: satellites, algae samples, coral cores or rivers.', 'Données mesurées : satellites, échantillons d’algues, carottes de corail ou fleuves.')}</span></p>
+    <p><span class="chip db">{CH['db'][1]}</span><span>{t('Reconstrucción o estimación calculada a partir de otros datos: depende de sus supuestos.', 'Reconstruction or estimate calculated from other data: depends on its assumptions.', 'Reconstitution ou estimation calculée à partir d’autres données : dépend de ses hypothèses.')}</span></p>
+  </div>
+'''
+
+page = f'''<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sargazo: ¿llegó para quedarse? · Ciencia para compartir</title>
+<meta name="description" content="Las fuentes detrás de la story sobre el sargazo: de dónde salió el cinturón del Atlántico, qué lo alimenta, por qué ya se mantiene solo y cómo se regula en Europa y América. / The sources behind the story on sargassum.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+{HORIZON}
+
+<main class="wrap">
+  <header>
+    <div class="top">
+      <a class="eyebrow" href="../">{t('← Ciencia y ambiente', '← Science and environment', '← Science et environnement')}</a>
+      <div class="lang" role="group" aria-label="Idioma / Language / Langue">
+        <button type="button" id="btn-es" data-set="es" aria-pressed="true">ES</button>
+        <button type="button" id="btn-en" data-set="en" aria-pressed="false">EN</button>
+        <button type="button" id="btn-fr" data-set="fr" aria-pressed="false">FR</button>
+      </div>
+    </div>
+    <h1>{t('Sargazo: ¿llegó para quedarse? <em>Las fuentes</em>', 'Sargassum: is it here to stay? <em>The sources</em>', 'Sargasses&nbsp;: sont-elles là pour rester&nbsp;? <em>Les sources</em>')}</h1>
+    <p class="lede">{t('Desde 2011, cada año llegan toneladas de sargazo a las playas de México, el Caribe, Florida y África occidental. ¿Por qué no se va? Aquí están los estudios detrás de cada idea de la story: de dónde salió, qué lo alimenta, por qué ya se mantiene solo y qué no está empeorando. Con el tipo de evidencia de cada uno y lo que no demuestra.',
+                       'Since 2011, tonnes of sargassum have washed up every year on the beaches of Mexico, the Caribbean, Florida and West Africa. Why won’t it go away? Here are the studies behind each idea in the story: where it came from, what feeds it, why it now sustains itself and what isn’t getting worse. With the type of evidence for each one and what it doesn’t show.',
+                       'Depuis 2011, des tonnes de sargasses s’échouent chaque année sur les plages du Mexique, des Caraïbes, de Floride et d’Afrique de l’Ouest. Pourquoi ne partent-elles pas&nbsp;? Voici les études derrière chaque idée de la story : d’où elles viennent, ce qui les nourrit, pourquoi elles s’entretiennent seules et ce qui ne s’aggrave pas. Avec le type de preuve de chacune et ce qu’elle ne montre pas.')}</p>
+    <p class="reviewed">{t('Evidencia revisada: oct 2026', 'Evidence reviewed: Oct 2026', 'Preuves revues : oct. 2026')}</p>
+  </header>
+
+{LEGEND}
+{''.join(S)}{REG}
+  <section>
+    <div class="frame"><h2>{t('La story', 'The story', 'La story')}</h2></div>
+    <img class="preview" src="preview.png" alt="Las stories en español, inglés y francés: Sargazo: ¿llegó para quedarse? / Sargassum: is it here to stay? / Sargasses : sont-elles là pour rester ?" width="1600" height="900" loading="lazy">
+  </section>
+
+  <footer>
+    <p>{t('Contenido divulgativo; no sustituye el consejo médico ni profesional. Para saber si llega sargazo a una playa concreta, consulta el semáforo o los avisos oficiales de tu zona.', 'For general information only; not medical or professional advice. To know whether sargassum is reaching a given beach, check your area’s official alerts.', 'Contenu de vulgarisation ; ne remplace pas un avis médical ou professionnel. Pour savoir si des sargasses arrivent sur une plage, consultez les alertes officielles de votre zone.')}</p>
+    <p>Antonio Puriel Hernández · <a href="../../">{t('Ciencia para compartir', 'Science to share', 'La science à partager')}</a> · <a href="../">{t('Más temas', 'More topics', 'Plus de sujets')}</a></p>
+  </footer>
+</main>
+<script src="../../assets/lang.js"></script>
+</body>
+</html>
+'''
+page = page.replace(' %', '&nbsp;%')
+(OUT / 'index.html').write_text(page)
+print('ok', len(page))

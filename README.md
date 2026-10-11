@@ -25,6 +25,7 @@
 
 | Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
 |---|---|---|
+| 2026-10 | Sargazo: ¿llegó para quedarse? · Sargassum: is it here to stay? · Sargasses : sont-elles là pour rester ? | [sargazo](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/#fr) |
 | 2026-10 | Disruptores endocrinos: ¿ya están en el agua? · Endocrine disruptors: are they already in the water? · Perturbateurs endocriniens : sont-ils déjà dans l’eau ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
 
 ### Ciencia y tecnología · Science and technology · Science et technologie ([`ciencia-tecnologia/`](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/))
