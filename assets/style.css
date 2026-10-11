@@ -115,3 +115,14 @@ footer p { margin: 0; }
 .cat:hover h2 { color: var(--accent); }
 @media (max-width: 420px) { .cat { grid-template-columns: 1fr; } }
 
+
+/* Serie: temas conectados (p. ej. disruptores endocrinos en salud, ambiente y tecnología) */
+.serie { display: flex; flex-direction: column; gap: 12px; padding: 18px 20px; border-radius: 16px; background: var(--surface); }
+.serie .serie-label { margin: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sage); }
+.serie ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.serie li > a, .serie li > div { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 14px; align-items: center; text-decoration: none; color: inherit; }
+.serie img { width: 40px; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 6px; }
+.serie .cat-name { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.serie .t { display: block; font-family: var(--display); font-weight: 600; font-size: 18px; line-height: 1.2; }
+.serie li > a:hover .t { color: var(--accent); }
+.serie .here-tag { display: inline-block; margin-left: 8px; font-family: var(--body); font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); border: 1.5px solid currentColor; border-radius: 999px; padding: 1px 7px; vertical-align: middle; }
