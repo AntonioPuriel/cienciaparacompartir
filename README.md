@@ -25,7 +25,7 @@
 
 | Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
 |---|---|---|
-| 2026-10 | ¿Basta con dejar de comprarlos? · Is it enough to stop buying them? · Suffit-il d’arrêter de les acheter ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
+| 2026-10 | Disruptores endocrinos: ¿ya están en el agua? · Endocrine disruptors: are they already in the water? · Perturbateurs endocriniens : sont-ils déjà dans l’eau ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
 
 ---
 
