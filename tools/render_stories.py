@@ -3,7 +3,11 @@ Uso: python3 render_stories.py <carpeta_destino>"""
 import html, re, sys, asyncio, pathlib
 from playwright.async_api import async_playwright
 import importlib
-STORIES = importlib.import_module(sys.argv[2] if len(sys.argv) > 2 else "story_agua").STORIES
+_mod = importlib.import_module(sys.argv[2] if len(sys.argv) > 2 else "story_agua")
+STORIES = _mod.STORIES
+# LAYOUT = 'pie': todo el texto sobre el cielo y las dunas solo al pie (como dieta-cerebro).
+# LAYOUT = 'franjas': texto repartido sobre las dunas (serie disruptores).
+LAYOUT = getattr(_mod, 'LAYOUT', 'franjas')
 
 FONTS = pathlib.Path(__file__).resolve().parent / 'fonts'  # ver tools/README.md
 CHROME = '/opt/pw-browsers/chromium-1194/chrome-linux/chrome'
@@ -35,9 +39,9 @@ def story_html(lang, scale):
     d = STORIES[lang]
     items = []
     for i, (icon, text, cite) in enumerate(d['items']):
-        band = next(b for b, (a, z) in enumerate(BANDS) if a <= i < z)
+        band = 0 if LAYOUT == 'pie' else next(b for b, (a, z) in enumerate(BANDS) if a <= i < z)
         cls = 'item sky' if band == 0 else 'item dune'
-        if i == BANDS[1][0]:
+        if LAYOUT != 'pie' and i == BANDS[1][0]:
             cls += ' first-dune'
         cite_html = f'<p class="cite">{html.escape(cite)}</p>' if cite else ''
         items.append(f'<div class="{cls}" data-band="{band}"><span class="ic">{icon}</span><div><p class="tx">{md(text)}</p>{cite_html}</div></div>')
@@ -71,10 +75,28 @@ h1{{font-family:'Fraunces',serif;font-weight:600;font-size:{86*scale:.1f}px;line
 <div class="items">{''.join(items)}</div>
 </div>
 <script>
+const LAYOUT='{LAYOUT}';
 document.fonts.ready.then(()=>{{
 function y(el){{return el.getBoundingClientRect().top}}
 function yb(el){{return el.getBoundingClientRect().bottom}}
 const items=[...document.querySelectorAll('.item')];
+if (LAYOUT==='pie'){{
+  const last=yb(items[items.length-1]);
+  const hz=Math.min(Math.max(last+70,1730),1790);
+  const W=1080;
+  function wave(top,amp,ph){{return `M0 ${{top+amp*Math.sin(ph)}} C 270 ${{top-amp}} 540 ${{top+amp}} 810 ${{top-amp*0.4}} S 1080 ${{top+amp*0.6}} 1080 ${{top+amp*0.2}} L1080 1920 L0 1920 Z`}}
+  const svg=document.getElementById('bg');
+  svg.innerHTML=`<circle cx="860" cy="${{hz-6}}" r="70" fill="#E9A24A"/>`+
+  `<path d="${{wave(hz-20,14,0.3)}}" fill="#E3CBA0"/>`+
+  `<path d="${{wave(hz+38,12,1.2)}}" fill="#B0702E"/>`+
+  `<path d="${{wave(hz+82,10,2.0)}}" fill="#9A4730"/>`+
+  `<path d="${{wave(hz+124,8,0.7)}}" fill="#6E3022"/>`;
+  function cactus(x,h,w){{const d=document.createElement('div');d.className='deco';d.innerHTML=`{CACTUS}`;d.style.cssText=`left:${{x}}px;top:${{hz-20-h+14}}px;width:${{w}}px;height:${{h}}px`;document.body.appendChild(d);d.firstChild.style.cssText='width:100%;height:100%'}}
+  cactus(112,86,78);cactus(310,30,24);cactus(972,64,52);
+  window.__overflow = last > 1700;
+  window.__done = true;
+  return;
+}}
 const firstOf=b=>items.find(i=>+i.dataset.band===b);
 const lastOf=b=>[...items].reverse().find(i=>+i.dataset.band===b);
 // horizon: between last sky item and first dune item
