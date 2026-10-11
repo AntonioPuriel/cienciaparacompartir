@@ -27,6 +27,12 @@
 |---|---|---|
 | 2026-10 | Disruptores endocrinos: ¿ya están en el agua? · Endocrine disruptors: are they already in the water? · Perturbateurs endocriniens : sont-ils déjà dans l’eau ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
 
+### Ciencia y tecnología · Science and technology · Science et technologie ([`ciencia-tecnologia/`](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/))
+
+| Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
+|---|---|---|
+| 2026-10 | ¿Se pueden destruir los PFAS? · Can PFAS be destroyed? · Peut-on détruire les PFAS ? | [pfas-destruccion](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/#fr) |
+
 ---
 
 Antonio Puriel Hernández, PhD · Contenido divulgativo; no sustituye el consejo médico. / For general information only; not medical advice. / Contenu de vulgarisation ; ne remplace pas un avis médical.
