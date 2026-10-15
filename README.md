@@ -25,6 +25,7 @@
 
 | Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
 |---|---|---|
+| 2026-10 | Estrés hídrico: ¿nos estamos quedando sin agua? · Water stress: are we running out of water? · Stress hydrique : sommes-nous en train de manquer d’eau ? | [estres-hidrico](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/estres-hidrico/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/estres-hidrico/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/estres-hidrico/#fr) |
 | 2026-10 | Sargazo: ¿llegó para quedarse? · Sargassum: is it here to stay? · Sargasses : sont-elles là pour rester ? | [sargazo](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/sargazo/#fr) |
 | 2026-10 | Disruptores endocrinos: ¿ya están en el agua? · Endocrine disruptors: are they already in the water? · Perturbateurs endocriniens : sont-ils déjà dans l’eau ? | [disruptores-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-ambiente/disruptores-agua/#fr) |
 
@@ -32,6 +33,8 @@
 
 | Fecha · Date | Tema · Topic · Sujet | Fuentes · Sources |
 |---|---|---|
+| 2026-10 | IA y centros de datos: ¿cuánta agua beben? · AI and data centres: how much water do they drink? · IA et centres de données : combien d’eau boivent-ils ? | [centros-datos-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/centros-datos-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/centros-datos-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/centros-datos-agua/#fr) |
+| 2026-10 | Estrés hídrico: ¿cómo se ahorra agua en el campo y la industria? · Water stress: how do farms and industry save water? · Stress hydrique : comment économiser l’eau aux champs et dans l’industrie ? | [ahorro-agua](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/ahorro-agua/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/ahorro-agua/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/ahorro-agua/#fr) |
 | 2026-10 | ¿Se pueden destruir los PFAS? · Can PFAS be destroyed? · Peut-on détruire les PFAS ? | [pfas-destruccion](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-tecnologia/pfas-destruccion/#fr) |
 
 ---
