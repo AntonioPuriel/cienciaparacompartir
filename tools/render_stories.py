@@ -33,7 +33,8 @@ CACTUS = '<svg viewBox="0 0 60 100"><g fill="none" stroke="#5E7048" stroke-width
 
 def md(s):
     s = html.escape(s, quote=False)
-    return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
+    s = re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
+    return re.sub(r'\*(.+?)\*', r'<i>\1</i>', s)  # *cursiva* para nombres de especie
 
 def story_html(lang, scale):
     d = STORIES[lang]
