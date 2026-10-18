@@ -1,0 +1,77 @@
+"""Texto de las stories «dieta e inflamación intestinal» (ES/EN/FR).
+Cada punto: (icono, texto con **negritas**, cita abreviada).
+LAYOUT = 'pie': todo el texto sobre fondo crema y las dunas solo al pie."""
+
+LAYOUT = "pie"
+
+STORIES = {
+    "es": {
+        "eyebrow": "Ciencia para compartir",
+        "title": "¿Qué comida inflama tu colon y cuál lo calma?",
+        "sub": "Lo que dicen las guías clínicas",
+        "items": [
+            ("🔥", "**Ultraprocesados con emulsionantes** (E‑466, E‑407, E‑433): las guías piden limitarlos.",
+             "IOIBD 2020 · guía de expertos"),
+            ("🥩", "**Carne roja y procesada:** comer menos se asocia con menos brotes de colitis ulcerosa.",
+             "AGA 2024 · guía clínica"),
+            ("🧂", "**Mucho azúcar, sal y grasas trans:** también a limitar.",
+             "AGA 2024 · IOIBD 2020 · guías"),
+            ("🫒", "**Dieta mediterránea:** 58 % menos riesgo de Crohn en 83 000 personas seguidas 17 años.",
+             "Khalili 2020 · cohorte: asociación"),
+            ("🥦", "**Frutas y verduras variadas;** cocidas, si crudas te sientan mal.",
+             "IOIBD 2020 · AGA 2024 · guías"),
+            ("🐟", "**Pescado azul,** mejor que cápsulas de omega-3.",
+             "IOIBD 2020 · guía de expertos"),
+            ("🥣", "**Fermentados** (yogur, kéfir, chucrut): más diversidad y menos marcadores inflamatorios.",
+             "Wastyk 2021 · ensayo en sanos, n=36"),
+            ("🔍", "**Lo que no demuestran:** que una dieta reduzca los brotes de forma constante. La comida acompaña al tratamiento, no lo sustituye.",
+             "AGA 2024 · DINE-CD 2021 · ensayo"),
+        ],
+    },
+    "en": {
+        "eyebrow": "Science to share",
+        "title": "Which foods inflame your colon and which calm it?",
+        "sub": "What the clinical guidelines say",
+        "items": [
+            ("🔥", "**Ultra-processed foods with emulsifiers** (E‑466, E‑407, E‑433): guidelines advise limiting them.",
+             "IOIBD 2020 · expert guidance"),
+            ("🥩", "**Red and processed meat:** eating less is linked to fewer ulcerative colitis flares.",
+             "AGA 2024 · clinical guideline"),
+            ("🧂", "**Lots of sugar, salt and trans fats:** also to limit.",
+             "AGA 2024 · IOIBD 2020 · guidelines"),
+            ("🫒", "**Mediterranean diet:** 58% lower risk of Crohn’s in 83,000 people followed for 17 years.",
+             "Khalili 2020 · cohort: association"),
+            ("🥦", "**Varied fruit and vegetables;** cooked, if raw ones don’t agree with you.",
+             "IOIBD 2020 · AGA 2024 · guidelines"),
+            ("🐟", "**Oily fish,** rather than omega-3 capsules.",
+             "IOIBD 2020 · expert guidance"),
+            ("🥣", "**Fermented foods** (yoghurt, kefir, sauerkraut): more diversity and fewer inflammatory markers.",
+             "Wastyk 2021 · trial in healthy adults, n=36"),
+            ("🔍", "**What they don’t show:** that any diet consistently reduces flares. Food supports treatment; it doesn’t replace it.",
+             "AGA 2024 · DINE-CD 2021 · trial"),
+        ],
+    },
+    "fr": {
+        "eyebrow": "La science à partager",
+        "title": "Quels aliments enflamment ton côlon et lesquels l’apaisent ?",
+        "sub": "Ce que disent les recommandations cliniques",
+        "items": [
+            ("🔥", "**Ultra-transformés avec émulsifiants** (E‑466, E‑407, E‑433) : les recommandations conseillent de les limiter.",
+             "IOIBD 2020 · avis d’experts"),
+            ("🥩", "**Viande rouge et transformée :** en manger moins est associé à moins de poussées de rectocolite hémorragique.",
+             "AGA 2024 · recommandation clinique"),
+            ("🧂", "**Trop de sucre, de sel et de graisses trans :** aussi à limiter.",
+             "AGA 2024 · IOIBD 2020 · recommandations"),
+            ("🫒", "**Régime méditerranéen :** 58 % de risque de Crohn en moins chez 83 000 personnes suivies 17 ans.",
+             "Khalili 2020 · cohorte : association"),
+            ("🥦", "**Fruits et légumes variés ;** cuits, si crus ils passent mal.",
+             "IOIBD 2020 · AGA 2024 · recommandations"),
+            ("🐟", "**Poissons gras,** plutôt que des gélules d’oméga-3.",
+             "IOIBD 2020 · avis d’experts"),
+            ("🥣", "**Aliments fermentés** (yaourt, kéfir, choucroute) : plus de diversité et moins de marqueurs inflammatoires.",
+             "Wastyk 2021 · essai chez des adultes sains, n=36"),
+            ("🔍", "**Ce que les études ne démontrent pas :** qu’un régime réduise les poussées de façon constante. L’alimentation accompagne le traitement, sans le remplacer.",
+             "AGA 2024 · DINE-CD 2021 · essai"),
+        ],
+    },
+}
