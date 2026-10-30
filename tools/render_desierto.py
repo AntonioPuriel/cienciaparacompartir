@@ -134,6 +134,16 @@ async def main():
                     break
             print(lang, 'scale', k, 'bottom', round(bottom))
             await pg.screenshot(path=str(OUT / f'story-{lang}.png'))
+        # preview 1600x900 con las tres stories, en los colores del atardecer
+        if len(LANGS) > 1:
+            imgs = ''.join(f'<img src="data:image/png;base64,{base64.b64encode((OUT / f"story-{l}.png").read_bytes()).decode()}">' for l in LANGS)
+            prev = f'''<html><body style="margin:0;width:1600px;height:900px;background:linear-gradient(#2A1A48 0,#7A2D5A 560px,#E07040 760px,#3A1620 760px)">
+<div style="display:flex;gap:71px;padding:60px 71px">{imgs}</div>
+<style>img{{width:438px;height:779px;border-radius:28px;display:block;box-shadow:0 10px 40px rgba(0,0,0,.35)}}</style></body></html>'''
+            await pg.set_viewport_size({'width': 1600, 'height': 900})
+            await pg.set_content(prev, wait_until='load')
+            await pg.wait_for_timeout(300)
+            await pg.screenshot(path=str(OUT / 'preview.png'))
         await b.close()
 
 asyncio.run(main())

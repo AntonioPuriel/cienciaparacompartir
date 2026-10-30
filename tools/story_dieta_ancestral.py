@@ -1,5 +1,6 @@
-"""Texto de las stories «dieta ancestral» (ES/EN/FR), en formato narrativo:
-tres paradas en el tiempo + la paleo de hoy + lo que no demuestran.
+"""Texto de las stories «dieta ancestral» (ES/EN/FR).
+Versión publicada: DESIERTO (pasado → presente, una cifra grande por parada), con render_desierto.py.
+STORIES es el borrador narrativo anterior, con el diseño estándar (render_stories.py).
 Cada punto: (icono, texto con **negritas**, cita abreviada).
 La historia completa, con todos los datos, va en la página del repo.
 LAYOUT = 'pie': todo el texto sobre fondo crema y las dunas solo al pie."""
@@ -83,5 +84,41 @@ DESIERTO = {
         "end": ("**Lo que no demuestran:** que nuestros antepasados no comieran carne. La comían cuando podían, y cuánta variaba según el lugar. Lo nuevo es la escala. **La clave** que se repite: mucha planta, pescado, poca carne y nada ultraprocesado.",
                 "Pontzer 2021 · EAT-Lancet 2025"),
         "repo": "**La historia completa,** con todas las fuentes, en el repo.",
+    },
+    "en": {
+        "eyebrow": "Science to share",
+        "title": "Ancestral diet: is the key eating like we used to?",
+        "sub": "From eating whatever was there to eating meat without limit",
+        "stops": [
+            ("1.95", "million years", "**By a lake in Kenya** we ate whatever was there: fish, turtles, crocodiles and antelopes. “Meat made us human”? The record shows no rise in meat with *Homo erectus*.",
+             "Braun 2010 · Barr 2022 · sites"),
+            ("50%", "plants", "**15,000 years ago in Morocco,** before farming, half the diet was acorns, pine nuts and wild legumes.",
+             "Moubtahij 2024 · isotopes"),
+            ("×5", "more meat", "**Today we produce 361 million tonnes of meat a year,** five times more than in 1961.",
+             "FAO 2026 · statistics"),
+            ("83%", "of farmland", "**goes to animal products,** which provide just 18% of the calories we eat.",
+             "Poore 2018 · synthesis of 40,000 farms"),
+        ],
+        "end": ("**What they don’t show:** that our ancestors didn’t eat meat. They ate it when they could, and how much varied from place to place. What’s new is the scale. **The key** that keeps repeating: lots of plants, fish, little meat and nothing ultra-processed.",
+                "Pontzer 2021 · EAT-Lancet 2025"),
+        "repo": "**The full story,** with every source, in the repo.",
+    },
+    "fr": {
+        "eyebrow": "La science à partager",
+        "title": "Manger comme nos ancêtres, est-ce la clé ?",
+        "sub": "De manger ce qu’il y avait à manger de la viande sans mesure",
+        "stops": [
+            ("1,95", "million d’années", "**Au bord d’un lac au Kenya,** on mangeait ce qu’il y avait : poissons, tortues, crocodiles et antilopes. « La viande nous a rendus humains » ? Les fouilles ne montrent pas plus de viande avec *Homo erectus*.",
+             "Braun 2010 · Barr 2022 · sites"),
+            ("50 %", "végétal", "**Il y a 15 000 ans au Maroc,** avant l’agriculture, la moitié de l’alimentation était faite de glands, de pignons et de légumineuses sauvages.",
+             "Moubtahij 2024 · isotopes"),
+            ("×5", "de viande", "**Aujourd’hui, on produit 361 millions de tonnes de viande par an,** cinq fois plus qu’en 1961.",
+             "FAO 2026 · statistiques"),
+            ("83 %", "des terres agricoles", "**servent aux produits animaux,** qui ne fournissent que 18 % des calories que nous mangeons.",
+             "Poore 2018 · synthèse de 40 000 fermes"),
+        ],
+        "end": ("**Ce que les études ne démontrent pas :** que nos ancêtres ne mangeaient pas de viande. Ils en mangeaient quand ils pouvaient, et la quantité variait selon le lieu. Ce qui est nouveau, c’est l’échelle. **La clé** qui revient toujours : beaucoup de végétal, du poisson, peu de viande et rien d’ultra-transformé.",
+                "Pontzer 2021 · EAT-Lancet 2025"),
+        "repo": "**L’histoire complète,** avec toutes les sources, dans le repo.",
     },
 }

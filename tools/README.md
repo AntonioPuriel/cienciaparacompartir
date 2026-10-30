@@ -46,3 +46,14 @@ python3 tools/add_serie_intestino.py
 
 - `healthkit.py`: etiquetas de evidencia de salud (Síntesis, Guía, Ensayo, Observacional, Ratón, Revisión, «Anterior a 2020») y la plantilla de página.
 - En los textos de las stories, `*cursiva*` sirve para los nombres de especie.
+
+## Dieta ancestral (salud) · diseño «desierto al atardecer»
+
+```bash
+# desde tools/
+python3 render_desierto.py ../ciencia-salud/dieta-ancestral story_dieta_ancestral   # stories ES/EN/FR + preview
+python3 build_dieta_ancestral_page.py ../ciencia-salud/dieta-ancestral
+```
+
+- `render_desierto.py`: diseño propio de este tema (cielo al atardecer, roca roja y saguaros a contraluz) con una cifra grande por punto. Lee `DESIERTO` del módulo: `stops` = (cifra, unidad, texto, cita), más `end` (lo que no demuestran) y `repo`. Usa el Chromium de Playwright, sin ruta fija.
+- Si el texto no cabe por encima de la roca (`LIMIT`), reduce la escala sola.
