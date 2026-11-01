@@ -69,3 +69,7 @@ cd .. && python3 tools/add_serie_intestino.py   # después de regenerar la pági
 
 - La página lleva los bloques «Serie: intestino» (cuarto tema) y «Serie: colon»; el tema de cáncer de colon en jóvenes aparece como «Próximamente» hasta que se publique.
 - `healthkit.py` incluye la etiqueta «Laboratorio» (análisis de alimentos) además de «Ratón».
+
+## README del repo
+
+Cada categoría va en un bloque `<details>` (Ciencia y salud abierta por defecto) con una tabla `Fecha | Tema | Fuentes`: título solo en español y enlaces cortos `[ES](…) · [EN](…#en) · [FR](…#fr)`. Al añadir un tema, la fila nueva va arriba de su categoría y hay que actualizar el número de temas del `<summary>`.
