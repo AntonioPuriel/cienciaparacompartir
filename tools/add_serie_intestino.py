@@ -1,4 +1,4 @@
-"""Inserta (o actualiza) el bloque «Serie: intestino» en las tres páginas de la serie.
+"""Inserta (o actualiza) el bloque «Serie: intestino» en las páginas de la serie.
 Se ejecuta desde la raíz del repo, después de los generadores. Es idempotente."""
 import re, os
 NB = '&nbsp;'
@@ -13,6 +13,9 @@ SERIE = [
     ('ciencia-salud/dieta-inflamacion',
      t('¿Qué comida inflama tu colon y cuál lo calma?', 'Which foods inflame your colon and which calm it?', f'Quels aliments enflamment ton côlon et lesquels l’apaisent{NB}?'),
      t('Qué comer', 'What to eat', 'Quoi manger')),
+    ('ciencia-salud/fritos-inflamacion',
+     t('Fritos e inflamación: ¿qué pasa cuando abusas?', 'Fried food and inflammation: what if you overdo it?', f'Fritures et inflammation{NB}: que se passe-t-il quand on abuse{NB}?'),
+     t('Los fritos', 'Fried food', 'Les fritures')),
 ]
 HERE = t('Estás aquí', 'You are here', 'Vous êtes ici')
 OPEN, CLOSE = '  <!-- serie:intestino -->', '<!-- /serie:intestino -->'

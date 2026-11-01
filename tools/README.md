@@ -64,7 +64,8 @@ python3 build_dieta_ancestral_page.py ../ciencia-salud/dieta-ancestral
 # desde tools/
 python3 render_desierto.py ../ciencia-salud/fritos-inflamacion story_fritos
 python3 build_fritos_page.py ../ciencia-salud/fritos-inflamacion
+cd .. && python3 tools/add_serie_intestino.py   # después de regenerar la página
 ```
 
-- La página lleva el bloque «Serie: colon»; el tema de cáncer de colon en jóvenes aparece como «Próximamente» hasta que se publique.
+- La página lleva los bloques «Serie: intestino» (cuarto tema) y «Serie: colon»; el tema de cáncer de colon en jóvenes aparece como «Próximamente» hasta que se publique.
 - `healthkit.py` incluye la etiqueta «Laboratorio» (análisis de alimentos) además de «Ratón».
