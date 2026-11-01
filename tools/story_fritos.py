@@ -4,6 +4,9 @@ La historia completa, con todos los datos y la regulación, va en la página del
 
 N = " "
 
+# Sin franja reservada para el sticker: el texto baja hasta las rocas.
+LIMIT = 1660
+
 DESIERTO = {
     "es": {
         "eyebrow": "Ciencia para compartir",
@@ -43,7 +46,7 @@ DESIERTO = {
     },
     "fr": {
         "eyebrow": "La science à partager",
-        "title": "Fritures et inflammation : que se passe-t-il quand on abuse ?",
+        "title": "Fritures et inflammation : que se passe-t-il quand on abuse ?",
         "sub": "La lourdeur d’un jour n’est pas de l’inflammation ; c’est l’habitude qui compte",
         "stops": [
             (f"+28{N}%", "risque cardio-vasculaire", "**Manger souvent des fritures** est associé à plus d’infarctus et d’insuffisance cardiaque.",
