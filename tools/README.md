@@ -57,3 +57,14 @@ python3 build_dieta_ancestral_page.py ../ciencia-salud/dieta-ancestral
 
 - `render_desierto.py`: diseño propio de este tema (cielo al atardecer, roca roja y saguaros a contraluz) con una cifra grande por punto. Lee `DESIERTO` del módulo: `stops` = (cifra, unidad, texto, cita), más `end` (lo que no demuestran) y `repo`. Usa el Chromium de Playwright, sin ruta fija.
 - Si el texto no cabe por encima de la roca (`LIMIT`), reduce la escala sola.
+
+## Fritos e inflamación (salud) · diseño «desierto al atardecer»
+
+```bash
+# desde tools/
+python3 render_desierto.py ../ciencia-salud/fritos-inflamacion story_fritos
+python3 build_fritos_page.py ../ciencia-salud/fritos-inflamacion
+```
+
+- La página lleva el bloque «Serie: colon»; el tema de cáncer de colon en jóvenes aparece como «Próximamente» hasta que se publique.
+- `healthkit.py` incluye la etiqueta «Laboratorio» (análisis de alimentos) además de «Ratón».
