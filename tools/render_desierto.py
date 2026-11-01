@@ -114,7 +114,8 @@ h1{{font-family:'Fraunces',serif;font-weight:600;font-size:var(--h1,84px);line-h
 
 
 # Límite inferior del texto: deja libre la franja de roca para el sticker de enlace.
-LIMIT = 1470
+# Un tema puede subirlo (LIMIT en su módulo) si no necesita la franja libre, para que el texto use más altura.
+LIMIT = getattr(importlib.import_module(sys.argv[2]), 'LIMIT', 1470)
 
 
 async def main():

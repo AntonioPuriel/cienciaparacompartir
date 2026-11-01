@@ -9,6 +9,7 @@ CH = {
     'obs': ('obs', t('Observacional', 'Observational', 'Observationnelle')),
     'lab': ('lab', t('Ratón', 'Mice', 'Souris')),
     'rev': ('rev', t('Revisión', 'Review', 'Revue')),
+    'food': ('lab', t('Laboratorio', 'Lab', 'Laboratoire')),
 }
 OLD = t('Anterior a 2020', 'Pre-2020', 'Avant 2020')
 
@@ -31,6 +32,9 @@ LEGEND_ITEMS = {
     'rev': t('Síntesis narrativa de mecanismos a partir de estudios celulares, animales y humanos.',
              'Narrative synthesis of mechanisms from cell, animal and human studies.',
              'Synthèse narrative de mécanismes à partir d’études cellulaires, animales et humaines.'),
+    'food': t('Análisis de alimentos en el laboratorio: mide qué se forma al cocinar, no efectos en la salud.',
+              'Lab analysis of food: measures what forms during cooking, not health effects.',
+              'Analyse d’aliments en laboratoire : mesure ce qui se forme à la cuisson, pas les effets sur la santé.'),
 }
 
 
