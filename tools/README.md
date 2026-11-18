@@ -73,3 +73,14 @@ cd .. && python3 tools/add_serie_intestino.py   # después de regenerar la pági
 ## README del repo
 
 Cada categoría va en un bloque `<details>` (Ciencia y salud abierta por defecto) con una tabla `Fecha | Tema | Fuentes`: título solo en español y enlaces cortos `[ES](…) · [EN](…#en) · [FR](…#fr)`. Al añadir un tema, la fila nueva va arriba de su categoría y hay que actualizar el número de temas del `<summary>`.
+
+## Semillas (salud) · diseño «desierto al atardecer»
+
+```bash
+# desde tools/
+python3 render_desierto.py ../ciencia-salud/semillas story_semillas
+python3 build_semillas_page.py ../ciencia-salud/semillas
+```
+
+- Miniserie en una sola story: ancestral, antiinflamatorio, intestino y moda, una cifra por ángulo.
+- La página añade la etiqueta «Arqueología», una tabla de siete semillas y un bloque «Temas relacionados» (dieta ancestral, dieta e inflamación, serie intestino) en lugar de un bloque de serie.

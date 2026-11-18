@@ -11,10 +11,11 @@
 ## Temas · Topics · Sujets
 
 <details open>
-<summary><b>Ciencia y salud</b> · Science and health · Science et santé — 9 temas · <a href="https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/"><code>ciencia-salud/</code></a></summary>
+<summary><b>Ciencia y salud</b> · Science and health · Science et santé — 10 temas · <a href="https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/"><code>ciencia-salud/</code></a></summary>
 
 | Fecha | Tema | Fuentes |
 |---|---|---|
+| 2026-11 | Semillas: ¿alimento ancestral, antiinflamatorio o moda? | [ES](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/semillas/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/semillas/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/semillas/#fr) |
 | 2026-11 | Fritos e inflamación: ¿qué pasa cuando abusas? | [ES](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/fritos-inflamacion/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/fritos-inflamacion/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/fritos-inflamacion/#fr) |
 | 2026-10 | Dieta ancestral: ¿la clave está en comer como antes? | [ES](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-ancestral/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-ancestral/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-ancestral/#fr) |
 | 2026-10 | ¿Qué comida inflama tu colon y cuál lo calma? | [ES](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-inflamacion/) · [EN](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-inflamacion/#en) · [FR](https://antoniopuriel.github.io/cienciaparacompartir/ciencia-salud/dieta-inflamacion/#fr) |
