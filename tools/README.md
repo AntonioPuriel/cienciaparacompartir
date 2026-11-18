@@ -84,3 +84,14 @@ python3 build_semillas_page.py ../ciencia-salud/semillas
 
 - Miniserie en una sola story: ancestral, antiinflamatorio, intestino y moda, una cifra por ángulo.
 - La página añade la etiqueta «Arqueología», una tabla de siete semillas y un bloque «Temas relacionados» (dieta ancestral, dieta e inflamación, serie intestino) en lugar de un bloque de serie.
+
+## Imagen «Las fuentes» y botones de guardar
+
+```bash
+# desde tools/ (en Windows, con PYTHONUTF8=1)
+python render_fuentes.py ../ciencia-salud/semillas   # un tema
+python render_fuentes.py --todos                     # todos
+```
+
+- `render_fuentes.py`: lee la página de fuentes ya generada y crea `fuentes-es.png`, `fuentes-en.png` y `fuentes-fr.png` (1080 px de ancho, alto variable): referencias por sección con autor y año, revista, tipo de evidencia y DOI, más la leyenda de los tipos usados. Volver a ejecutarlo cada vez que cambie la página.
+- `assets/guardar.js` (lo carga `lang.js` en las páginas de tema): bajo el preview pone «Guardar story» y «Guardar fuentes», que guardan una sola imagen en el idioma elegido. En el iPhone abren el menú de compartir («Guardar imagen», Instagram); en la computadora la descargan.

@@ -23,7 +23,7 @@ OPEN, CLOSE = '  <!-- serie:intestino -->', '<!-- /serie:intestino -->'
 def block(current):
     items = []
     for i, (path, title, angle) in enumerate(SERIE, 1):
-        rel = os.path.relpath(path, current) + '/'
+        rel = os.path.relpath(path, current).replace(os.sep, '/') + '/'
         thumb = f'<img src="{rel}story-es.png" alt="" width="40" height="71" loading="lazy">'
         txt = f'<span><span class="cat-name">{i} · {angle}</span><span class="t">{title}'
         if path == current:

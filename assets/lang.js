@@ -14,3 +14,11 @@
   if (langs.indexOf(start) < 0) { try { start = localStorage.getItem('cpc-lang') || 'es'; } catch (e) { start = 'es'; } }
   setLang(langs.indexOf(start) < 0 ? 'es' : start);
 })();
+
+// Botones para guardar la story o las fuentes (solo en páginas de tema).
+(function () {
+  if (!document.querySelector('img.preview')) return;
+  var s = document.createElement('script');
+  s.src = document.currentScript ? document.currentScript.src.replace(/lang\.js(\?.*)?$/, 'guardar.js') : '../../assets/guardar.js';
+  document.body.appendChild(s);
+})();

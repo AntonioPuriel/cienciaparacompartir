@@ -19,7 +19,7 @@ HERE = t('Estás aquí', 'You are here', 'Vous êtes ici')
 def block(current):
     items = []
     for i, (path, cat, title, angle) in enumerate(SERIE, 1):
-        rel = os.path.relpath(path, current) + '/'
+        rel = os.path.relpath(path, current).replace(os.sep, '/') + '/'
         thumb = f'<img src="{rel}story-es.png" alt="" width="40" height="71" loading="lazy">'
         txt = f'<span><span class="cat-name">{i} · {cat} · {angle}</span><span class="t">{title}'
         if path == current:
